@@ -15,9 +15,9 @@ return [
 
    'db' => [
         'driver'   => 'Mysqli',
-        'hostname' => 'mysql.vinidiax.kinghost.net',
+        'hostname' => 'mysql',
         'username' => 'vinidiax',
-        'password' => 'adere134',
+        'password' => 'pass',
         'database' => 'vinidiax',
     ]
 ];
