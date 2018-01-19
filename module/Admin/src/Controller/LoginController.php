@@ -9,15 +9,28 @@
 namespace Admin\Controller;
 
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Admin\Model\UserTable;
+use \Library\Abstracts\Admin\Controller as AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class LoginController extends AbstractActionController
 {
-	
+
+    private $userTable;
+
+    public function __construct(UserTable $userTable)
+    {
+        $this->userTable = $userTable;
+    }
+
 	public function indexAction()
 	{
-		return new ViewModel();
+
+	    $userTable  =   $this->userTable;
+
+		return new ViewModel([
+		    'users' => $userTable->fetchAll()
+        ]);
 	}
 	
 }

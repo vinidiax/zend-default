@@ -61,11 +61,19 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'S' => 
+        array (
+            'Site\\' => 5,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+        ),
+        'L' => 
+        array (
+            'Library\\' => 8,
         ),
         'I' => 
         array (
@@ -243,6 +251,10 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Site\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Site/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -254,6 +266,10 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Library\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/library',
         ),
         'Interop\\Container\\' => 
         array (
