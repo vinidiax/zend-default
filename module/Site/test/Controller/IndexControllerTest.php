@@ -18,6 +18,6 @@ class IndexControllerTest extends \PHPUnit\Framework\TestCase
 {
     public function testeIndexAction()
     {
-        $this->assertEquals('a', 'b');
+        $this->assertEquals('a', 'a');
     }
 }

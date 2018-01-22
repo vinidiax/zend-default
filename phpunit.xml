@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="Testes no site">
-            <directory>/module/Site/test/</directory>
+        <testsuite name="Site">
+            <directory>./module/Site/test</directory>
         </testsuite>
-         <testsuite name="Testes no admin">
-            <directory>/module/Admin/test/Controller</directory>
+         <testsuite name="Admin">
+            <directory>./module/Admin/test</directory>
         </testsuite>
     </testsuites>
 </phpunit>
