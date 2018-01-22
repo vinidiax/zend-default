@@ -4,9 +4,7 @@ namespace Admin;
 
 
 use Admin\Controller\LoginController;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\ResultSet\ResultSet;
-use Zend\Db\TableGateway\TableGateway;
+use Admin\Model\Factory\UserTableGatewayFactory;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 class Module implements ConfigProviderInterface
@@ -26,14 +24,7 @@ class Module implements ConfigProviderInterface
                     $tableGateway = $container->get(Model\UserTableGateway::class);
                     return new Model\UserTable($tableGateway);
                 },
-                Model\UserTableGateway::class => function($container)
-                {
-                    $dbAdapter = $container->get(AdapterInterface::class);
-                    $resultSetPrototype =   new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype(new Model\User());
-
-                    return new TableGateway('user', $dbAdapter,null, $resultSetPrototype);
-                }
+                Model\UserTableGateway::class => UserTableGatewayFactory::class
             ]
         ];
     }

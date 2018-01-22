@@ -19,8 +19,8 @@ class RegisterController extends AbstractController
         return new ViewModel();
     }
     
-    public function registerAction()
+    public function addAction()
     {
-        
+        return new ViewModel();
     }
 }
