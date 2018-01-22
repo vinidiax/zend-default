@@ -2,31 +2,6 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.8.3 - 2017-12-01
-
-### Added
-
-- Nothing.
-
-### Changed
-
-- Nothing.
-
-### Deprecated
-
-- Nothing.
-
-### Removed
-
-- Nothing.
-
-### Fixed
-
-- [#101](https://github.com/zendframework/zend-session/pull/101) fixes an issue
-  created with the 2.8.2 release with regards to setting a session save path for
-  non-files save handlers; prior to this patch, incorrect validations were run
-  on the path provided, leading to unexpected exceptions being raised.
-
 ## 2.8.2 - 2017-11-29
 
 ### Added

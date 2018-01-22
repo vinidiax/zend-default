@@ -46,6 +46,7 @@ return array(
     'ZF\\DevelopmentMode\\' => array($vendorDir . '/zfcampus/zf-development-mode/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Site\\' => array($baseDir . '/module/Site/src'),
+    'SiteTest\\' => array($baseDir . '/module/Site/test'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
@@ -56,4 +57,5 @@ return array(
     'Application\\' => array($baseDir . '/module/Application/src'),
     'ApplicationTest\\' => array($baseDir . '/module/Application/test'),
     'Admin\\' => array($baseDir . '/module/Admin/src'),
+    'AdminTest\\' => array($baseDir . '/module/Admin/test'),
 );
