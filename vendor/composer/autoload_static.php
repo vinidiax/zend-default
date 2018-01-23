@@ -62,6 +62,11 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'User\\' => 5,
+            'UserTest\\' => 9,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -260,6 +265,14 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'User\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/User/src',
+        ),
+        'UserTest\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/User/test',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

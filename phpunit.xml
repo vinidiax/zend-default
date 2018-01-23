@@ -4,8 +4,11 @@
         <testsuite name="Site">
             <directory>./module/Site/test</directory>
         </testsuite>
-         <testsuite name="Admin">
+        <testsuite name="Admin">
             <directory>./module/Admin/test</directory>
+        </testsuite>
+        <testsuite name="User">
+            <directory>./module/User/test</directory>
         </testsuite>
     </testsuites>
 </phpunit>

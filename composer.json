@@ -31,14 +31,16 @@
             "Application\\": "module/Application/src/",
             "Admin\\" : "module/Admin/src/",
             "Library\\": "library/",
-            "Site\\": "module/Site/src/"
+            "Site\\": "module/Site/src/",
+            "User\\": "module/User/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "ApplicationTest\\": "module/Application/test/",
             "SiteTest\\": "module/Site/test",
-            "AdminTest\\": "module/Admin/test"
+            "AdminTest\\": "module/Admin/test",
+            "UserTest\\": "module/User/test"
         }
     },
     "extra": [],
