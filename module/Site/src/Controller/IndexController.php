@@ -9,12 +9,17 @@
 namespace Site\Controller;
 
 
-use Zend\View\Helper\ViewModel;
+use Zend\View\Model\ViewModel;
 use Library\Abstracts\Site\Controller as AbstractController;
 
 class IndexController extends AbstractController
 {
-    public function indexController()
+    public function indexAction()
+    {
+        return new ViewModel();
+    }
+
+    public function contactAction()
     {
         return new ViewModel();
     }

@@ -2,10 +2,13 @@
 
 namespace Site;
 
+use Zend\Router\Http\Segment;
+use Zend\ServiceManager\Factory\InvokableFactory;
+
 return [
 	'controllers'   =>  [
 		'factories' =>  [
-			#Controller\LoginController::class => InvokableFactory::class
+			Controller\IndexController::class => InvokableFactory::class
 		]
 	],
 	
@@ -14,17 +17,27 @@ return [
 			'site' => [
 				'type' => 'literal',
 				'options' => [
-					'route' => '/site',
+					'route' => '/',
 					'defaults' => [
 						'controller'    =>  Controller\IndexController::class,
 						'action'        =>  'index'
 					]
 				]
 			],
+            'site-contact' =>  [
+                'type' =>  Segment::class,
+                'options' => [
+                        'route' => '/contact',
+                        'defaults' => [
+                                'controller' => Controller\IndexController::class,
+                                'action'     => 'contact'
+                        ]
+                ]
+            ],
 			'register' => [
-				'type' => 'segment',
+				'type' => Segment::class,
 				'options' => [
-					'route' => '/site/register[/:action]',
+					'route' => '/register[/:action[/:id]]',
 					'constraints' => [
 						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
 						'id' => '[0-9]+'
@@ -35,12 +48,13 @@ return [
 					]
 				]
 			]
+
 		]
 	],
 	
 	'view_manager'  =>  [
 		'template_path_stack'   =>  [
-			'site' =>  __DIR__."/../view"
+			 __DIR__."/../view"
 			
 		]
 	]

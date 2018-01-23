@@ -9,7 +9,7 @@
 namespace Site\Controller;
 
 
-use Zend\View\Helper\ViewModel;
+use Zend\View\Model\ViewModel;
 use Library\Abstracts\Site\Controller as AbstractController;
 
 class RegisterController extends AbstractController
