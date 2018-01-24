@@ -1,11 +1,11 @@
 <?php
 
-namespace Admin;
+namespace User;
 
 
-use Admin\Controller\LoginController;
+use User\Model\Factory\UserTableFactory;
+use User\Model\Factory\UserTableGatewayFactory;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use \User\Model\UserTable;
 
 class Module implements ConfigProviderInterface
 {
@@ -15,6 +15,16 @@ class Module implements ConfigProviderInterface
 		return include __DIR__."/../config/module.config.php";
 	}
 
+	public function getServiceConfig()
+    {
+        return [
+            'factories' => [
+                Model\UserTable::class => UserTableFactory::class,
+                Model\UserTableGateway::class => UserTableGatewayFactory::class
+            ]
+        ];
+    }
+/*
     public function getControllerConfig()
     {
         return[
@@ -22,12 +32,12 @@ class Module implements ConfigProviderInterface
                 LoginController::class => function($container)
                 {
                     return new LoginController(
-                        $container->get(UserTable::class)
+                        $container->get(Model\UserTable::class)
                     );
                 }
             ]
         ];
     }
-
+*/
 
 }

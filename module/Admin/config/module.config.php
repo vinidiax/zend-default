@@ -2,33 +2,29 @@
 
 namespace Admin;
 
-use Zend\ServiceManager\Factory\InvokableFactory;
+
+use Zend\Router\Http\Segment;
 
 return [
-	'controllers'   =>  [
-		'factories' =>  [
-			#Controller\LoginController::class => InvokableFactory::class
-		]
-	],
-	
 	'router' => [
 		'routes' => [
-			'admin' => [
-				'type' => 'literal',
-				'options' => [
-					'route' => '/admin',
-					'defaults' => [
-						'controller'    =>  Controller\LoginController::class,
-						'action'        =>  'index'
-					]
-				]
-			]
+            'admin' => [
+                'type' => 'literal',
+                'options' => [
+                    'route' => '/admin',
+                    'defaults' => [
+                        'controller'    =>  Controller\LoginController::class,
+                        'action'        =>  'index'
+                    ]
+                ]
+            ]
 		]
 	],
-	
-	'view_manager'  =>  [
-		'template_path_stack'   =>  [
-			'admin' =>  __DIR__."/../view"
-		]
-	]
+
+    'view_manager'  =>  [
+            'template_path_stack'   =>  [
+                    __DIR__."/../view"
+
+            ]
+    ]
 ];

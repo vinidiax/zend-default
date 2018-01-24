@@ -9,10 +9,9 @@
 namespace Admin\Controller;
 
 
-use Admin\Model\UserTable;
+use \User\Model\UserTable;
 use \Library\Abstracts\Admin\Controller as AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Zend\View\View;
 
 class LoginController extends AbstractActionController
 {
@@ -28,7 +27,7 @@ class LoginController extends AbstractActionController
 	{
 
 	    $userTable  =   $this->userTable;
-	
+
 		return new ViewModel([
 		    'users' => $userTable->fetchAll()
         ]);

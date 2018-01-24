@@ -6,9 +6,9 @@
  * Time: 18:45
  */
 
-namespace Admin\Model\Factory;
+namespace User\Model\Factory;
 
-use Admin\Model\User;
+use User\Model\User;
 use Interop\Container\ContainerInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\ResultSet\ResultSet;
