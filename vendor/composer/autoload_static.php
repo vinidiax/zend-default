@@ -29,6 +29,7 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
             'Zend\\ServiceManager\\' => 20,
             'Zend\\Router\\' => 12,
             'Zend\\Psr7Bridge\\' => 16,
+            'Zend\\Paginator\\' => 15,
             'Zend\\Mvc\\Plugin\\Prg\\' => 20,
             'Zend\\Mvc\\Plugin\\Identity\\' => 25,
             'Zend\\Mvc\\Plugin\\FlashMessenger\\' => 31,
@@ -54,6 +55,7 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
             'Zend\\Config\\' => 12,
             'Zend\\ComponentInstaller\\' => 24,
             'Zend\\Code\\' => 10,
+            'Zend\\Cache\\' => 11,
             'Zend\\Authentication\\' => 20,
             'ZendDeveloperTools\\' => 19,
             'ZF\\DevelopmentMode\\' => 19,
@@ -149,6 +151,10 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         'Zend\\Psr7Bridge\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-psr7bridge/src',
+        ),
+        'Zend\\Paginator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-paginator/src',
         ),
         'Zend\\Mvc\\Plugin\\Prg\\' => 
         array (
@@ -249,6 +255,10 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
         'Zend\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
+        ),
+        'Zend\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-cache/src',
         ),
         'Zend\\Authentication\\' => 
         array (
@@ -377,6 +387,14 @@ class ComposerStaticInit81a1bd614e25fd2f395bf75fb8c23691
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+            'DoctrineORMModule\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/doctrine-orm-module/src',
+            ),
+            'DoctrineModule\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/doctrine-module/src',
             ),
         ),
     );

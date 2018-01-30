@@ -33,6 +33,8 @@ class StreamOutput extends Output
     private $stream;
 
     /**
+     * Constructor.
+     *
      * @param resource                      $stream    A stream resource
      * @param int                           $verbosity The verbosity level (one of the VERBOSITY constants in OutputInterface)
      * @param bool|null                     $decorated Whether to decorate messages (null for auto-guessing)
@@ -40,7 +42,7 @@ class StreamOutput extends Output
      *
      * @throws InvalidArgumentException When first argument is not a real stream
      */
-    public function __construct($stream, int $verbosity = self::VERBOSITY_NORMAL, bool $decorated = null, OutputFormatterInterface $formatter = null)
+    public function __construct($stream, $verbosity = self::VERBOSITY_NORMAL, $decorated = null, OutputFormatterInterface $formatter = null)
     {
         if (!is_resource($stream) || 'stream' !== get_resource_type($stream)) {
             throw new InvalidArgumentException('The StreamOutput class needs a stream as its first argument.');
@@ -70,7 +72,7 @@ class StreamOutput extends Output
      */
     protected function doWrite($message, $newline)
     {
-        if (false === @fwrite($this->stream, $message) || ($newline && (false === @fwrite($this->stream, PHP_EOL)))) {
+        if (false === @fwrite($this->stream, $message.($newline ? PHP_EOL : ''))) {
             // should never happen
             throw new RuntimeException('Unable to write output.');
         }
@@ -83,7 +85,7 @@ class StreamOutput extends Output
      *
      * Colorization is disabled if not supported by the stream:
      *
-     *  -  Windows != 10.0.10586 without Ansicon, ConEmu or Mintty
+     *  -  Windows without Ansicon, ConEmu or Mintty
      *  -  non tty consoles
      *
      * @return bool true if the stream supports colorization, false otherwise
@@ -91,11 +93,7 @@ class StreamOutput extends Output
     protected function hasColorSupport()
     {
         if (DIRECTORY_SEPARATOR === '\\') {
-            return
-                '10.0.10586' === PHP_WINDOWS_VERSION_MAJOR.'.'.PHP_WINDOWS_VERSION_MINOR.'.'.PHP_WINDOWS_VERSION_BUILD
-                || false !== getenv('ANSICON')
-                || 'ON' === getenv('ConEmuANSI')
-                || 'xterm' === getenv('TERM');
+            return false !== getenv('ANSICON') || 'ON' === getenv('ConEmuANSI') || 'xterm' === getenv('TERM');
         }
 
         return function_exists('posix_isatty') && @posix_isatty($this->stream);

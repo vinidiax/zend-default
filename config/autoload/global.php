@@ -1,23 +1,18 @@
 <?php
-/**
- * Global Configuration Override
- *
- * You can use this file for overriding configuration values from modules, etc.
- * You would place values in here that are agnostic to the environment and not
- * sensitive to security.
- *
- * @NOTE: In practice, this file will typically be INCLUDED in your source
- * control, so do not include passwords or other sensitive information in this
- * file.
- */
-
 return [
-
-   'db' => [
-        'driver'   => 'Mysqli',
-        'hostname' => 'mysql.vinidiax.kinghost.net:3306',
-        'username' => 'vinidiax',
-        'password' => 'adere134',
-        'database' => 'vinidiax',
-    ]
+        'doctrine' => [
+                'connection' => [
+                    // default connection name
+                        'orm_default' => [
+                                'driverClass' => \Doctrine\DBAL\Driver\Mysqli\Driver::class,
+                                'params' => [
+                                        'host'     => 'mysql.vinidiax.kinghost.net',
+                                        'port'     => '3306',
+                                        'user'     => 'vinidiax',
+                                        'password' => 'testesenha123',
+                                        'dbname'   => 'vinidiax',
+                                ],
+                        ],
+                ],
+        ],
 ];

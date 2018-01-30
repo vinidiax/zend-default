@@ -10,4 +10,6 @@ return array(
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
+    'DoctrineORMModule\\' => array($vendorDir . '/doctrine/doctrine-orm-module/src'),
+    'DoctrineModule\\' => array($vendorDir . '/doctrine/doctrine-module/src'),
 );

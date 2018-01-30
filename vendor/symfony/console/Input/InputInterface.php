@@ -11,9 +11,6 @@
 
 namespace Symfony\Component\Console\Input;
 
-use Symfony\Component\Console\Exception\InvalidArgumentException;
-use Symfony\Component\Console\Exception\RuntimeException;
-
 /**
  * InputInterface is the interface implemented by all input classes.
  *
@@ -24,7 +21,7 @@ interface InputInterface
     /**
      * Returns the first argument from the raw parameters (not parsed).
      *
-     * @return string|null The value of the first argument or null otherwise
+     * @return string The value of the first argument or null otherwise
      */
     public function getFirstArgument();
 
@@ -57,13 +54,17 @@ interface InputInterface
 
     /**
      * Binds the current Input instance with the given arguments and options.
+     *
+     * @param InputDefinition $definition A InputDefinition instance
      */
     public function bind(InputDefinition $definition);
 
     /**
-     * Validates the input.
+     * Validates if arguments given are correct.
      *
-     * @throws RuntimeException When not enough arguments are given
+     * Throws an exception when not enough arguments are given.
+     *
+     * @throws \RuntimeException
      */
     public function validate();
 
@@ -75,13 +76,11 @@ interface InputInterface
     public function getArguments();
 
     /**
-     * Returns the argument value for a given argument name.
+     * Gets argument by name.
      *
-     * @param string $name The argument name
+     * @param string $name The name of the argument
      *
-     * @return mixed The argument value
-     *
-     * @throws InvalidArgumentException When argument given doesn't exist
+     * @return mixed
      */
     public function getArgument($name);
 
@@ -112,13 +111,11 @@ interface InputInterface
     public function getOptions();
 
     /**
-     * Returns the option value for a given option name.
+     * Gets an option by name.
      *
-     * @param string $name The option name
+     * @param string $name The name of the option
      *
-     * @return mixed The option value
-     *
-     * @throws InvalidArgumentException When option given doesn't exist
+     * @return mixed
      */
     public function getOption($name);
 
